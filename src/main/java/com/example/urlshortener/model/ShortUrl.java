@@ -1,14 +1,12 @@
 package com.example.urlshortener.model;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDateTime;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Builder
 @NoArgsConstructor
@@ -27,9 +25,4 @@ public class ShortUrl {
     @NotNull
     @Column(unique = true)
     private String code;
-
-    //@CreationTimestamp
-    private LocalDateTime creationDate = LocalDateTime.now();
-
-    private LocalDateTime expirationDate;
 }

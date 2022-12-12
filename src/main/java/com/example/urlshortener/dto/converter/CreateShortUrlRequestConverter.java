@@ -11,7 +11,6 @@ public class CreateShortUrlRequestConverter {
             return ShortUrl.builder()
                     .code(from.getCode())
                     .url(from.getUrl())
-                    .expirationDate(from.getExpirationDate())
                     .build();
     }
 }

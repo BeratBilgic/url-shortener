@@ -55,7 +55,6 @@ public class ShortUrlService {
         }else if (repository.findAllByCode(request.getCode()).isPresent()){
             throw new CodeAlreadyExists("code already exists");
         }
-        request.setCode(request.getCode().toUpperCase());
 
         return dtoConverter.convertToDto(repository.save(requestConverter.convertToEntity(request)));
     }
@@ -65,6 +64,7 @@ public class ShortUrlService {
         do {
             code = randomStringGenerator.generateRandomString();
         }while (repository.findAllByCode(code).isPresent());
+
         return code;
     }
 }

@@ -1,12 +1,12 @@
 package com.example.urlshortener.dto;
 
-import jakarta.validation.constraints.NotEmpty;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import javax.validation.constraints.NotBlank;
 
 @Builder
 @NoArgsConstructor
@@ -14,10 +14,10 @@ import java.time.LocalDateTime;
 @Data
 public class CreateShortUrlRequest {
 
-    @NotEmpty
+    @ApiModelProperty(name = "original url")
+    @NotBlank
     private String url;
 
+    @ApiModelProperty(name = "shortUrl code")
     private String code;
-
-    private LocalDateTime expirationDate;
 }

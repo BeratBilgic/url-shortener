@@ -16,17 +16,16 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
+    @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                   HttpHeaders headers,
                                                                   HttpStatus status,
-                                                                  WebRequest request){
-
+                                                                  WebRequest request) {
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach(err ->{
             errors.put(((FieldError) err).getField(), err.getDefaultMessage());
         });
 
-        //return ResponseEntity.badRequest().body(errors);
         return ResponseEntity.badRequest().body(errors);
     }
 
@@ -34,7 +33,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> codeAlreadyExistsHandler(CodeAlreadyExists ex){
         return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
     }
-
+    @ExceptionHandler(ShortUrlNotFoundException.class)
     public ResponseEntity<Object> shortUrlNotFoundException(ShortUrlNotFoundException ex){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }

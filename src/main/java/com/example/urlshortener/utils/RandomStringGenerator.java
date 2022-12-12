@@ -12,7 +12,7 @@ public class RandomStringGenerator {
     private int codeLength;
 
     public String generateRandomString(){
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
         StringBuilder sb = new StringBuilder();
 

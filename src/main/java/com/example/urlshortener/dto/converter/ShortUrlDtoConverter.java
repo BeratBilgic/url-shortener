@@ -12,8 +12,6 @@ public class ShortUrlDtoConverter {
                 .id(from.getId())
                 .url(from.getUrl())
                 .code(from.getCode())
-                .creationDate(from.getCreationDate())
-                .expirationDate(from.getExpirationDate())
                 .build();
     }
 }
