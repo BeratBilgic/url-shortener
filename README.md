@@ -15,7 +15,7 @@ Spring Boot based REST API that takes a URL and returns a shortened URL and uses
 # Swagger UI
 Swagger UI will be run on this url : `http://localhost:${PORT}/swagger-ui/`
 
-<img src="https://github.com/BeratBilgic/url-shortener/tree/main/images/urlShortenerSwagger.png" width="700" />
+<img src="https://github.com/BeratBilgic/url-shortener/blob/main/images/urlShortenerSwagger.png" width="700" />
 
 # Example Video
 
